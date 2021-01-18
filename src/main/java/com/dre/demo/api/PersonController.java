@@ -15,22 +15,25 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RequestMapping("api/v1/dosi")
+@RequestMapping("/")
 @RestController
 // @CrossOrigin
 public class PersonController {
     private final Personservice personService;
 
-    @GetMapping("/helloworld")
+    @GetMapping()
     public String home() {
-        return "Heloo World";
+        return "try :\n /spring \n /all";
     }
 
     @GetMapping("/spring")
     public String test() {
         return "Heloo World from Spring";
     }
-
+    @GetMapping(path = "{message}")
+    public String message(@PathVariable("message") String message) {
+        return "Bonjour : "+message;
+    }
     @Autowired
     public PersonController(Personservice personService) {
         this.personService = personService;
@@ -41,7 +44,7 @@ public class PersonController {
         personService.addPerson(person);
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public List<Person> getAll() {
         return personService.getAll();
     }
