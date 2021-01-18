@@ -23,7 +23,7 @@ public class PersonController {
 
     @GetMapping()
     public String home() {
-        return "try : /spring or /bonjour/{your essage here} or /all to get all list of names";
+        return "try : /spring or /bonjour/{your essage here} or /all to get all list of names or /all/{ID} to get by ID";
     }
 
     @GetMapping("/spring")
@@ -35,7 +35,7 @@ public class PersonController {
         try{
             personService.addPerson(new Person(null, message));
         }catch(Exception e){
-            
+
         }
         
         return "Bonjour : "+message;
@@ -55,7 +55,7 @@ public class PersonController {
         return personService.getAll();
     }
 
-    @GetMapping(path = "{id}")
+    @GetMapping(path = "/all/{id}")
     public Person  findByID(@PathVariable("id") UUID ID) {
         return personService.getPersonByID(ID).orElse(null);
     }
