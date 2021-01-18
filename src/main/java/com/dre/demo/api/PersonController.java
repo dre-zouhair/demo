@@ -23,14 +23,14 @@ public class PersonController {
 
     @GetMapping()
     public String home() {
-        return "try : /spring or /message/{your essage here}";
+        return "try : /spring or /bonjour/{your essage here}";
     }
 
     @GetMapping("/spring")
     public String test() {
         return "Heloo World from Spring";
     }
-    @GetMapping(path = "/message/{message}")
+    @GetMapping(path = "/bonjour/{bonjour}")
     public String message(@PathVariable("message") String message) {
         return "Bonjour : "+message;
     }
