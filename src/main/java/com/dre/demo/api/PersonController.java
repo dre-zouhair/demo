@@ -23,7 +23,7 @@ public class PersonController {
 
     @GetMapping()
     public String home() {
-        return "try : /spring or /bonjour/{your essage here}";
+        return "try : /spring or /bonjour/{your essage here} or /all to get all list of names";
     }
 
     @GetMapping("/spring")
@@ -32,6 +32,12 @@ public class PersonController {
     }
     @GetMapping(path = "/bonjour/{bonjour}")
     public String message(@PathVariable("message") String message) {
+        try{
+            personService.addPerson(new Person(null, message));
+        }catch(Exception e){
+            
+        }
+        
         return "Bonjour : "+message;
     }
     @Autowired
