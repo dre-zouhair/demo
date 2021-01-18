@@ -23,9 +23,7 @@ public class PersonController {
 
     @GetMapping()
     public String home() {
-        personService.addPerson(new Person(UUID.randomUUID(),"zouhair dre"));
-        personService.addPerson(new Person(UUID.randomUUID(),"ali dre"));
-        return "try :  <h1>/spring</h1>   or <h1>/bonjour/{your essage here}</h1>   or <h1>/all to get all list of names </h1>   or <h1>/all/{ID} to get by ID</h1>"
+                return "try :  <h1>/spring</h1>   or <h1>/bonjour/{your essage here}</h1>   or <h1>/all to get all list of names </h1>   or <h1>/all/{ID} to get by ID</h1>"
         +"  or you can add a person using postman to send a POST request to <h1> https://demo-dosi-java-deploy.herokuapp.com </h1> with </br>{</br>"+
          "    \"name\" :\"a name to add\""+
         "     </br>   } object in the request's body";
@@ -36,7 +34,8 @@ public class PersonController {
         return "Heloo World from Spring";
     }
     @GetMapping(path = "/bonjour/{name}")
-    public String message(@PathVariable("name") String name) {        
+    public String message(@PathVariable("name") String name) {     
+        personService.addPerson(new Person(UUID.randomUUID(),name));   
         return "Bonjour : "+name;
     }
     @Autowired
