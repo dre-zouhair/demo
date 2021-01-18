@@ -35,9 +35,9 @@ public class PersonController {
     public String test() {
         return "Heloo World from Spring";
     }
-    @GetMapping(path = "/bonjour/{bonjour}")
-    public String message(@PathVariable("message") String message) {        
-        return "Bonjour : "+message;
+    @GetMapping(path = "/bonjour/{name}")
+    public String message(@PathVariable("name") String name) {        
+        return "Bonjour : "+name;
     }
     @Autowired
     public PersonController(Personservice personService) {
