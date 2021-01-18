@@ -27,7 +27,7 @@ public class PersonController {
         personService.addPerson(new Person(UUID.randomUUID(),"ali dre"));
         return "try :  <h1>/spring</h1>   or <h1>/bonjour/{your essage here}</h1>   or <h1>/all to get all list of names </h1>   or <h1>/all/{ID} to get by ID</h1>"
         +"  or you can add a person using postman to send a POST request to <h1> https://demo-dosi-java-deploy.herokuapp.com </h1> with </br>{</br>"+
-         "  </br>     \"name\" :\"a name to add\""+
+         "    \"name\" :\"a name to add\""+
         "     </br>   } object in the request's";
     }
 
