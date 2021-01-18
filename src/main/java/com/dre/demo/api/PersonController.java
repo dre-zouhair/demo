@@ -25,10 +25,11 @@ public class PersonController {
     public String home() {
         personService.addPerson(new Person(UUID.randomUUID(),"zouhair dre"));
         personService.addPerson(new Person(UUID.randomUUID(),"ali dre"));
-        return "try : </br> /spring or /bonjour/{your essage here} or /all to get all list of names or /all/{ID} to get by ID"
-        +"you can add a person using postman to send a POST request to https://demo-dosi-java-deploy.herokuapp.com with {"+
-         "   \"name\" :\"a name to add\""+
-        "        }";
+        return "try : </br> /spring </br>  or /bonjour/{your essage here}  </br>  or /all to get all list of names  </br>  or /all/{ID} to get by ID"
+        return "try : </br> /spring </br>  or /bonjour/{your essage here}  </br>  or /all to get all list of names  </br>  or /all/{ID} to get by ID"
+        +" </br> or you can add a person using postman to send a POST request to https://demo-dosi-java-deploy.herokuapp.com with </br>{</br>"+
+         "  </br>     \"name\" :\"a name to add\""+
+        "     </br>   }";
     }
 
     @GetMapping("/spring")
