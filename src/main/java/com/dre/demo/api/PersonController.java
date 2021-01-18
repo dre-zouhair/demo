@@ -23,6 +23,8 @@ public class PersonController {
 
     @GetMapping()
     public String home() {
+        personService.addPerson(new Person(UUID.randomUUID(),"zouhair dre"));
+        personService.addPerson(new Person(UUID.randomUUID(),"ali dre"));
         return "try : /spring or /bonjour/{your essage here} or /all to get all list of names or /all/{ID} to get by ID";
     }
 
