@@ -31,13 +31,7 @@ public class PersonController {
         return "Heloo World from Spring";
     }
     @GetMapping(path = "/bonjour/{bonjour}")
-    public String message(@PathVariable("message") String message) {
-        try{
-            personService.addPerson(new Person(null, message));
-        }catch(Exception e){
-
-        }
-        
+    public String message(@PathVariable("message") String message) {        
         return "Bonjour : "+message;
     }
     @Autowired
