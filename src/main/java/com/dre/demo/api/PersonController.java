@@ -23,7 +23,7 @@ public class PersonController {
 
     @GetMapping()
     public String home() {
-                return "try :  <h1>/spring</h1>   or <h1>/bonjour/{your essage here}</h1>   or <h1>/all to get all list of names </h1>   or <h1>/all/{ID} to get by ID</h1>"
+                return "try :  <h1>/spring</h1>   or <h1>/bonjour/{your name here}</h1>   or <h1>/all to get all list of names </h1>   or <h1>/all/{ID} to get by ID</h1>"
         +"  or you can add a person using postman to send a POST request to <h1> https://deploy-demo-java-dosi.cleverapps.io </h1> with </br>{</br>"+
          "    \"name\" :\"a name to add\""+
         "     </br>   } object in the request's body";
